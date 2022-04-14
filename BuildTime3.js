@@ -828,5 +828,10 @@ const jobs = [
 ];
 //DO NOT TOUCH THE ARRAY ABOVE!
 
- 
+function filterJobs(title, location) {
+  const searchResults = {
+    result: [],
+    count: 0,
+  };
+}
 
