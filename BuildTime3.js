@@ -833,5 +833,20 @@ function filterJobs(title, location) {
     result: [],
     count: 0,
   };
+  for (let i = 0; i < jobs.length; i++) {
+    if (
+      jobs[i].title.toLowerCase().includes(title.toLowerCase()) &&
+      jobs[i].location.toLowerCase().includes(location.toLowerCase())
+    ) {
+      delete jobs[i].benefits;
+      delete jobs[i].description;
+      delete jobs[i].requirements;
+      delete jobs[i].company_profile;
+      searchResults.result.push(jobs[i]);
+      searchResults.count++;
+    }
+  }
+  return searchResults;
 }
 
+console.log(filterJobs("developer", "us"));
